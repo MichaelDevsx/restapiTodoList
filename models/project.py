@@ -11,3 +11,4 @@ class ProjectModel(db.Model):
     finish_date = db.Column(db.String(255), nullable=False)
 
     user_id = db.Column(db.Integer(), db.ForeignKey("users.id"), nullable=False)
+    todos_id = db.relationship("ToDoModel", backref="projects", lazy="dynamic")

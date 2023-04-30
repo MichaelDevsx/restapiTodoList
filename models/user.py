@@ -8,4 +8,6 @@ class UserModel(db.Model):
     email = db.Column(db.String(255), nullable=False, unique=True)
     password = db.Column(db.String(255), nullable=False, unique=True)
 
-    project_id = db.relationship("ProjectModel", backref="users", lazy="dynamic")
+    project = db.relationship("ProjectModel", backref="users", lazy="dynamic")
+    todo = db.relationship("ToDoModel", backref="users", lazy="dynamic")
+    comment = db.relationship("CommentModel", backref="users", lazy="dynamic")
